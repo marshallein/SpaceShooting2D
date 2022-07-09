@@ -11,8 +11,10 @@ public class SpaceshipController : MonoBehaviour
     private Dictionary<string, Action> keywordAction = new Dictionary<string, Action>();
     private KeywordRecognizer keywordRecognizer;
     private string command = "pending";
-    public float max_Y = 3.75f;
-    public float min_Y = -3.75f;
+    public float upper_Y = 3.75f;
+    public float lower_Y = -3.75f;
+    public float mid_Y = 0f;
+    private float pivot;
 
     void Start()
     {
@@ -32,16 +34,42 @@ public class SpaceshipController : MonoBehaviour
     private void MoveDown()
     {
         command = "move down";
+        Vector3 temp = transform.position;
+        pivot = temp.y;
     }
 
     private void MoveUp()
     {
         command = "move up";
+        Vector3 temp = transform.position;
+        pivot = temp.y;
     }
 
     void Update()
     {
         MoveSpaceship();
+        Debug.Log(command);
+    }
+
+    float GetLimit()
+    {
+        if (command == "move up" && (pivot == mid_Y || pivot == upper_Y))
+        {
+            return upper_Y;
+        }
+        else if (command == "move up" && pivot == lower_Y)
+        {
+            return mid_Y;
+        }
+        else if (command == "move down" && pivot == upper_Y)
+        {
+            return mid_Y;
+        }
+        else if (command == "move down" && (pivot == mid_Y || pivot == lower_Y))
+        {
+            return lower_Y;
+        }
+        return float.MaxValue;
     }
 
     void MoveSpaceship()
@@ -51,22 +79,24 @@ public class SpaceshipController : MonoBehaviour
             case "move up":
                 Vector3 temp = transform.position;
                 temp.y += speed * Time.deltaTime;
-                if(temp.y > max_Y)
+                float limit = GetLimit();
+                if (temp.y > limit)
                 {
-                    temp.y = max_Y; 
+                    temp.y = limit;
+                    command = "pending";
                 }
                 transform.position = temp;
-                //command = "pending";
                 break;
             case "move down":
                 Vector3 temp1 = transform.position;
                 temp1.y -= speed * Time.deltaTime;
-                if (temp1.y < min_Y)
+                float limit1 = GetLimit();
+                if (temp1.y < limit1)
                 {
-                    temp1.y = min_Y;
+                    temp1.y = limit1;
+                    command = "pending";
                 }
                 transform.position = temp1;
-                //command = "pending";
                 break;
         }
     }

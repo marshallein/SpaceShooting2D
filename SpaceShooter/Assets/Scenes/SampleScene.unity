@@ -331,6 +331,10 @@ PrefabInstance:
       value: 3.75
       objectReference: {fileID: 0}
     - target: {fileID: 2256728400695064448, guid: 94d2b881fc6e11d46b90d02a86989440, type: 3}
+      propertyPath: mid_Y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256728400695064448, guid: 94d2b881fc6e11d46b90d02a86989440, type: 3}
       propertyPath: min_Y
       value: -3.75
       objectReference: {fileID: 0}
