@@ -15,14 +15,27 @@ public class SpaceshipController : MonoBehaviour
     public float lower_Y = -3.75f;
     public float mid_Y = 0f;
     private float pivot;
-
+    [SerializeField]
+    private GameObject bullet;
+    [SerializeField]
+    private Transform bullet_spawn;
+    public float attack_Timer = 0.35f;
+    private float current_Attack_Timer;
+    private bool canAttack;
     void Start()
     {
+        current_Attack_Timer = attack_Timer;
         keywordAction.Add("move down", MoveDown);
         keywordAction.Add("move up", MoveUp);
+        keywordAction.Add("shoot", Shoot);
         keywordRecognizer = new KeywordRecognizer(keywordAction.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += OnKeyWordsReconized;
         keywordRecognizer.Start();
+    }
+
+    private void Shoot()
+    {
+        command = "shoot";
     }
 
     private void OnKeyWordsReconized(PhraseRecognizedEventArgs args)
@@ -47,7 +60,12 @@ public class SpaceshipController : MonoBehaviour
 
     void Update()
     {
-        MoveSpaceship();
+        attack_Timer += Time.deltaTime;
+        if (attack_Timer > current_Attack_Timer)
+        {
+            canAttack = true;
+        }
+        SpaceshipCommand();
         Debug.Log(command);
     }
 
@@ -72,7 +90,7 @@ public class SpaceshipController : MonoBehaviour
         return float.MaxValue;
     }
 
-    void MoveSpaceship()
+    void SpaceshipCommand()
     {
         switch (command)
         {
@@ -97,6 +115,15 @@ public class SpaceshipController : MonoBehaviour
                     command = "pending";
                 }
                 transform.position = temp1;
+                break;
+            case "shoot":
+                if (canAttack)
+                {
+                    canAttack = false;
+                    attack_Timer = 0f;
+                    Instantiate(bullet, bullet_spawn.position, Quaternion.identity);
+                    command = "pending";
+                }
                 break;
         }
     }
