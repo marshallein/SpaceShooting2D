@@ -28,6 +28,6 @@ public class BulletScript : MonoBehaviour
 
     void Deactivate()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

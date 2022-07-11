@@ -24,6 +24,10 @@ public class SpaceshipController : MonoBehaviour
     private bool canAttack;
     void Start()
     {
+        foreach(string d in Microphone.devices)
+        {
+            Debug.Log("Mic: " + d);
+        }
         current_Attack_Timer = attack_Timer;
         keywordAction.Add("move down", MoveDown);
         keywordAction.Add("move up", MoveUp);
@@ -66,7 +70,7 @@ public class SpaceshipController : MonoBehaviour
             canAttack = true;
         }
         SpaceshipCommand();
-        Debug.Log(command);
+        //Debug.Log(command);
     }
 
     float GetLimit()
