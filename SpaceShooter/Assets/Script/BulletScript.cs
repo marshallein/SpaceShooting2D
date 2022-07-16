@@ -7,13 +7,12 @@ public class BulletScript : MonoBehaviour
 
     public float speed = 5.0f;
     public float dectivate_Timer = 12f;
-    // Start is called before the first frame update
+
     void Start()
     {
         Invoke("Deactivate", dectivate_Timer);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

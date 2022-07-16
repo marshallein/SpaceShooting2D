@@ -12,6 +12,7 @@ public class BombEnemyController : MonoBehaviour, ICloneable
         Attack,
     }
 
+    public static event EventHandler BombEnemyDestroyed;
     public BasicEnemy enemyInfo;
     public GameObject projectilePrefab;
 
@@ -66,6 +67,7 @@ public class BombEnemyController : MonoBehaviour, ICloneable
     {
         if (_health <= 0)
         {
+            BombEnemyDestroyed?.Invoke(this, EventArgs.Empty);
             _spawner.BombPool.Release(this);
         }
 

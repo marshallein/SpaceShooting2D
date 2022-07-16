@@ -6,7 +6,7 @@ using UnityEngine;
 public class MiniEnemyController : MonoBehaviour, ICloneable
 {
     public BasicEnemy enemyInfo;
-
+    public static event EventHandler MiniEnemyDestroyed;
     private int _health;
     [SerializeField]
     private int _moveSpeed;
@@ -29,6 +29,7 @@ public class MiniEnemyController : MonoBehaviour, ICloneable
     {
         if (_health <= 0)
         {
+            MiniEnemyDestroyed?.Invoke(this, EventArgs.Empty);
             gameObject.SetActive(false);
         }
     }
