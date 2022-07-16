@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 2803991973064132185}
   - component: {fileID: 2803991973064132186}
   - component: {fileID: 2803991973064132187}
-  - component: {fileID: 2256728400695064448}
   - component: {fileID: 2803991971643441293}
+  - component: {fileID: 7434735594960731879}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -167,25 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2256728400695064448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2803991973064132188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef1113e4083438042a1993b7fad01868, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  upper_Y: 3.75
-  lower_Y: -3.75
-  mid_Y: 0
-  bullet: {fileID: 8369392673695016787, guid: 66c14e2f5bff8134880c64eb6e597fbf, type: 3}
-  bullet_spawn: {fileID: 1313176414}
-  attack_Timer: 0.35
 --- !u!95 &2803991971643441293
 Animator:
   serializedVersion: 4
@@ -206,3 +187,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7434735594960731879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803991973064132188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adafe034bee3c1544a03f8fbdd8550e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 0}
+  dot: {fileID: 0}
+  bullet: {fileID: 8369392673695016787, guid: 66c14e2f5bff8134880c64eb6e597fbf, type: 3}
+  bullet_spawn: {fileID: 1313176414}
