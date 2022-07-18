@@ -39,7 +39,9 @@ public class LazerEnemyController : MonoBehaviour, ICloneable
 
     private void OnEnable()
     {
+        _state = State.Move;
         _canAttack = true;
+        Threshold = null;
     }
 
     // Update is called once per frame
@@ -115,7 +117,6 @@ public class LazerEnemyController : MonoBehaviour, ICloneable
 
     IEnumerator AttackAction()
     {
-        Debug.Log("fire");
         projectile.SetActive(true);
         yield return new WaitForSeconds(3);
         projectile.SetActive(false);

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd28167dac94e88428eb08ddbec7b003, type: 3}
   m_Name: BombEnemy
   m_EditorClassIdentifier: 
-  health: 3
-  percentage: 40
-  _weight: 40
+  health: 1
+  percentage: 100
+  _weight: 100

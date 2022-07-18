@@ -15,12 +15,10 @@ public class SpaceshipIdleState : SpaceshipBaseState
         spaceship.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("Switch to moving state");
             spaceship.SwitchState(spaceship.movingState);
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Switch to shooting state");
             spaceship.SwitchState(spaceship.shootingState);
         }
     }

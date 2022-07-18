@@ -62,6 +62,11 @@ public class BombEnemyController : MonoBehaviour, ICloneable
         _currentAttackTimer = _attackTimer;
     }
 
+    private void OnEnable()
+    {
+        _health = enemyInfo.health;
+    }
+
     // Update is called once per frame
     void Update()
     {

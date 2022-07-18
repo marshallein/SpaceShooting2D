@@ -8,7 +8,15 @@ public class BulletScript : MonoBehaviour
     public float speed = 5.0f;
     public float dectivate_Timer = 12f;
 
+    public delegate void OnDeactive();
+
+    public OnDeactive OnDeactiveFunction { get; set; }
     void Start()
+    {
+        Invoke("Deactivate", dectivate_Timer);
+    }
+
+    private void OnEnable()
     {
         Invoke("Deactivate", dectivate_Timer);
     }
@@ -27,7 +35,7 @@ public class BulletScript : MonoBehaviour
 
     void Deactivate()
     {
-        Destroy(gameObject);
+        OnDeactiveFunction();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

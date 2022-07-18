@@ -201,5 +201,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 0}
   dot: {fileID: 0}
-  bullet: {fileID: 8369392673695016787, guid: 66c14e2f5bff8134880c64eb6e597fbf, type: 3}
+  bullet: {fileID: 6021441466201692725, guid: 66c14e2f5bff8134880c64eb6e597fbf, type: 3}
   bullet_spawn: {fileID: 1313176414}

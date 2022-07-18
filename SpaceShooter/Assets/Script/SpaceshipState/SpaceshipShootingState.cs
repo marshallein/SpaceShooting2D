@@ -32,12 +32,10 @@ public class SpaceshipShootingState : SpaceshipBaseState
     {
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("Switch to moving state");
             spaceship.SwitchState(spaceship.movingState);
         }
         else
         {
-            Debug.Log("Switch to idle state");
             spaceship.SwitchState(spaceship.idleState);
         }
     }

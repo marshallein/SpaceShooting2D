@@ -41,14 +41,13 @@ public class EnemyBombScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //DestroyProjectile();
-            this.gameObject.SetActive(false);
+            DestroyProjectile();
+            //this.gameObject.SetActive(false);
         }
     }
 
     void DestroyProjectile()
     {
-        gameObject.GetComponentInParent<BombEnemyController>().ProjectilePool.Release(this.gameObject);
-
+        this.gameObject.SetActive(false);
     }
 }

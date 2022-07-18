@@ -123,7 +123,7 @@ MonoBehaviour:
   enemyInfo: {fileID: 11400000, guid: 6fef7752b9e0f504bb93ab829583947f, type: 2}
   projectilePrefab: {fileID: 64276488517790826, guid: ee7dde9a41732964697ef4d90a365334, type: 3}
   _moveSpeed: 10
-  _attackTimer: 0.5
+  _attackTimer: 2
 --- !u!58 &3606097535304394126
 CircleCollider2D:
   m_ObjectHideFlags: 0

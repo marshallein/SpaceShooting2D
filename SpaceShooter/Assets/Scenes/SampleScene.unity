@@ -943,7 +943,7 @@ Transform:
   - {fileID: 934455305}
   - {fileID: 873767986}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1104165531
 GameObject:
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1289000811}
   - component: {fileID: 1289000810}
   m_Layer: 5
-  m_Name: TimmerText
+  m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,7 +1334,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1380332982
 MonoBehaviour:
@@ -1540,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5752968235606630514, guid: b67b3330c3dcb184b8d9b47d4a00c7ae, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5752968235606630514, guid: b67b3330c3dcb184b8d9b47d4a00c7ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1598,7 +1598,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6466165876834796665, guid: 0461eb239f26788449c6645a8720a7cd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6466165876834796665, guid: 0461eb239f26788449c6645a8720a7cd, type: 3}
       propertyPath: m_LocalPosition.x

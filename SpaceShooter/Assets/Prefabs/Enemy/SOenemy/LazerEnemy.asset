@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LazerEnemy
   m_EditorClassIdentifier: 
   health: 1
-  percentage: 30
-  _weight: 60
+  percentage: 0
+  _weight: 100
