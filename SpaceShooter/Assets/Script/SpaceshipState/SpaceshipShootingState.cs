@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpaceshipShootingState : SpaceshipBaseState
 {
-    private float attack_Timer = 0.35f;
+    private float attack_Timer = 2f;
     private float current_Attack_Timer;
     private bool canAttack;
     public override void EnterState(SpaceshipStateControl spaceship)

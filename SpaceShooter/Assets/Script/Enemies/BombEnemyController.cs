@@ -65,6 +65,7 @@ public class BombEnemyController : MonoBehaviour, ICloneable
     private void OnEnable()
     {
         _health = enemyInfo.health;
+        _state = State.Move;
     }
 
     // Update is called once per frame

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8340831440708978424}
   m_Layer: 0
   m_Name: LazerEnemy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5162620617113359794}
   m_Layer: 0
   m_Name: LazerProjectile
-  m_TagString: Untagged
+  m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

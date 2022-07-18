@@ -29,7 +29,6 @@ public class MiniEnemyController : MonoBehaviour, ICloneable
     {
         if (_health <= 0)
         {
-            MiniEnemyDestroyed?.Invoke(this, EventArgs.Empty);
             gameObject.SetActive(false);
         }
     }
@@ -49,13 +48,22 @@ public class MiniEnemyController : MonoBehaviour, ICloneable
         _rigidbody.velocity = new Vector2(Vector2.left.x * _moveSpeed, _rigidbody.velocity.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "bullet")
+        {
+            MiniEnemyDestroyed?.Invoke(this, EventArgs.Empty);
+            _health--;
+        }
+        if(collision.gameObject.tag == "Player")
         {
             _health--;
         }
     }
+
+
+
 
     IEnumerator Deactivate()
     {

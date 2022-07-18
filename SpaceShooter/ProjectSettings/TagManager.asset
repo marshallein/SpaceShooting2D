@@ -7,6 +7,9 @@ TagManager:
   - bullet
   - threshold
   - environment
+  - enemy
+  - enemyBullet
+  - GUI
   layers:
   - Default
   - TransparentFX

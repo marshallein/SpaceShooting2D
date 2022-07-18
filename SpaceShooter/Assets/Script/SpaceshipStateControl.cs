@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class SpaceshipStateControl : MonoBehaviour
     public SpaceshipCollisionState collisionState = new SpaceshipCollisionState();
     public SpaceshipShootingState shootingState = new SpaceshipShootingState();
     private ObjectPool<BulletScript> _bulletPool;
+    public static event EventHandler SpaceshipTakeDamage;
 
     private
     void Start()
@@ -46,6 +48,24 @@ public class SpaceshipStateControl : MonoBehaviour
         }, true, defaultCapacity: 10, maxSize: 20);
 
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemyBullet")
+        {
+            Debug.Log(collision.gameObject.name);
+            SpaceshipTakeDamage?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "enemyBullet")
+        {
+            Debug.Log(collision.gameObject.name);
+            SpaceshipTakeDamage?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     void Update()

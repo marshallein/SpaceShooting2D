@@ -72,7 +72,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy(int moveRatio)
     {
-        int randomIndexLocation = Random.Range(0, spawnPoints.Length - 1);
+        int randomIndexLocation = Random.Range(0, spawnPoints.Length);
         BasicEnemy randomEnemy = _enemies[GetRandomEnemyIndex()];
         switch (randomEnemy.name)
         {

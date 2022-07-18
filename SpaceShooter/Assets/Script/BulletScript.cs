@@ -35,7 +35,10 @@ public class BulletScript : MonoBehaviour
 
     void Deactivate()
     {
-        OnDeactiveFunction();
+        if (this.gameObject.activeInHierarchy)
+        {
+            OnDeactiveFunction();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
